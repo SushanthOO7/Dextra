@@ -1,26 +1,38 @@
 {
-  "name": "Dextra",
+  "name": "dextra",
+  "version": "1.0.0",
+  "description": "GUI-first deployment automation with AI-powered error recovery",
   "private": true,
+  "workspaces": [
+    "app",
+    "server",
+    "plugins/*"
+  ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "dev": "concurrently \"npm run dev:app\" \"npm run dev:server\"",
+    "dev:app": "cd app && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev:ml": "cd ml && python -m uvicorn main:app --reload --port 8001",
+    "build": "npm run build:app && npm run build:server",
+    "build:app": "cd app && npm run build",
+    "build:server": "cd server && npm run build",
+    "package": "cd app && npm run package",
+    "test": "npm run test:app && npm run test:server",
+    "test:app": "cd app && npm test",
+    "test:server": "cd server && npm test",
+    "lint": "npm run lint:app && npm run lint:server",
+    "lint:app": "cd app && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "format": "npm run format:app && npm run format:server",
+    "format:app": "cd app && npm run format",
+    "format:server": "cd server && npm run format"
   },
   "devDependencies": {
-    "turbo": "^2.5.8",
-    "typescript": "5.9.2"
+    "concurrently": "^8.2.2",
+    "lerna": "^8.0.0"
   },
   "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@11.5.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "express": "^5.1.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
