@@ -11,6 +11,7 @@ import Welcome from '../components/Welcome'
 function App() {
   const { theme } = useTheme()
   const { projects } = useProjects()
+  
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>

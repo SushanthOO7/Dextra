@@ -1,0 +1,47 @@
+# Agent-S3 Environment Configuration - Supercomputer Optimized
+# Copy this file to .env and configure for your supercomputer
+
+# Vercel API Configuration (optional - only for API fallback testing)
+VERCEL_API_TOKEN=your_vercel_api_token_here
+
+# Agent-S3 Main Generation Model Configuration - LOCAL MODELS
+AGENT_S_PROVIDER=huggingface
+AGENT_S_MODEL=microsoft/Agent-S3
+AGENT_S_MODEL_URL=http://localhost:8000
+AGENT_S_API_KEY=
+
+# Agent-S3 Grounding Model Configuration - BEST LOCAL MODEL
+AGENT_S_GROUND_PROVIDER=huggingface
+AGENT_S_GROUND_URL=http://localhost:8001
+AGENT_S_GROUND_MODEL=UI-TARS-72B
+AGENT_S_GROUND_API_KEY=
+
+# Grounding Model Dimensions (UI-TARS-72B: 1000x1000)
+AGENT_S_GROUNDING_WIDTH=1000
+AGENT_S_GROUNDING_HEIGHT=1000
+
+# Agent-S3 Settings - Optimized for Supercomputer Performance
+AGENT_S_TEMPERATURE=0.7
+AGENT_S_MAX_TRAJECTORY=12
+AGENT_S_REFLECTION=true
+AGENT_S_LOCAL_ENV=true
+
+# Platform and Screen Settings - VS Remote Tunnel Optimized
+AGENT_S_PLATFORM=linux
+AGENT_S_SCREEN_WIDTH=1920
+AGENT_S_SCREEN_HEIGHT=1080
+
+# VS Remote Tunnel Specific Settings
+AGENT_S_HEADLESS=true              # Run browser in headless mode (required for remote)
+AGENT_S_DISPLAY=:99                # Virtual display for headless browser
+AGENT_S_BROWSER_TIMEOUT=30000      # Browser timeout in milliseconds
+AGENT_S_SCREENSHOT_QUALITY=90      # High quality screenshots for better AI analysis
+
+# GPU Settings - Optimized for Supercomputer
+CUDA_AVAILABLE=true
+AGENT_S_GPU_MEMORY=0.8
+
+# Performance Tuning (Optional)
+VLLM_GPU_MEMORY_UTILIZATION=0.8
+VLLM_MAX_MODEL_LEN=8192
+VLLM_TENSOR_PARALLEL_SIZE=1

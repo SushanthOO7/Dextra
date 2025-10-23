@@ -1,8 +1,6 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
-// Custom APIs for renderer
 const electronAPI = {
-  // Dialog APIs
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
   openFile: () => ipcRenderer.invoke('dialog:openFile'),
   

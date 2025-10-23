@@ -50,7 +50,7 @@ router.post('/', async (req: Request, res: Response) => {
 router.get('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params
-    const task = taskService.getTaskStatus(id)
+    const task = await taskService.getTaskStatus(id)
     
     if (!task) {
       return res.status(404).json({ 

@@ -49,10 +49,12 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5173
+    port: 5173,
+    sourcemapIgnoreList: false
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    minify: false
   }
 })

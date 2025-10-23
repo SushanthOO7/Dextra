@@ -1,0 +1,38 @@
+# ML Testing Requirements - Optimized for Local Supercomputer
+torch>=2.0.0
+transformers>=4.30.0
+playwright>=1.40.0
+stable-baselines3>=2.0.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=2.0.0
+
+# Agent-S3 specific requirements
+gui-agents>=0.3.1
+pyautogui>=0.9.54
+
+# Local Model Hosting - Best Performance
+vllm>=0.2.0  # Fastest inference engine
+accelerate>=0.20.0  # Multi-GPU support
+bitsandbytes>=0.41.0  # Quantization for memory efficiency
+flash-attn>=2.0.0  # Faster attention computation
+
+# Additional dependencies for Agent-S3
+httpx>=0.24.0
+aiofiles>=23.0.0
+
+# VS Remote Tunnel Specific Dependencies
+pyvirtualdisplay>=3.0  # Virtual display for headless browser
+selenium>=4.15.0  # Browser automation fallback
+webdriver-manager>=4.0.0  # Automatic driver management
+pillow>=10.0.0  # Image processing for screenshots
+opencv-python>=4.8.0  # Computer vision for GUI analysis
+
+# GPU Optimization
+cupy-cuda12x>=12.0.0  # GPU acceleration (adjust CUDA version)
+triton>=2.0.0  # GPU kernel optimization
